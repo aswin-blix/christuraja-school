@@ -30,14 +30,14 @@ export function Footer() {
             Founded on {site.founded} by the {site.management}. From 23 children to more than 3,000 —
             still growing, still serving.
           </p>
-          <p className="mt-6 font-display text-xl text-gold-400">“{site.motto}”</p>
+          <p className="mt-6 font-display text-xl text-brand-100">“{site.motto}”</p>
           <div className="mt-6 flex gap-3">
             <a href={site.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 hover:border-gold-400 hover:text-gold-400">
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 hover:border-brand-100 hover:text-brand-100">
               <Facebook size={18} />
             </a>
             <a href={site.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 hover:border-gold-400 hover:text-gold-400">
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 hover:border-brand-100 hover:text-brand-100">
               <Youtube size={18} />
             </a>
           </div>
@@ -61,7 +61,7 @@ export function Footer() {
           <h3 className="font-sans text-sm font-semibold text-white">Contact</h3>
           <ul className="mt-4 space-y-3 text-[0.95rem]">
             <li className="flex gap-3">
-              <MapPin size={18} className="mt-0.5 shrink-0 text-gold-400" aria-hidden="true" />
+              <MapPin size={18} className="mt-0.5 shrink-0 text-brand-100" aria-hidden="true" />
               <span>
                 {site.name}
                 <br />
@@ -73,11 +73,11 @@ export function Footer() {
               </span>
             </li>
             <li className="flex gap-3">
-              <Phone size={18} className="mt-0.5 shrink-0 text-gold-400" aria-hidden="true" />
+              <Phone size={18} className="mt-0.5 shrink-0 text-brand-100" aria-hidden="true" />
               <a href={site.phoneHref} className="hover:text-white">{site.phone}</a>
             </li>
             <li className="flex gap-3">
-              <Mail size={18} className="mt-0.5 shrink-0 text-gold-400" aria-hidden="true" />
+              <Mail size={18} className="mt-0.5 shrink-0 text-brand-100" aria-hidden="true" />
               <a href={`mailto:${site.email}`} className="break-all hover:text-white">{site.email}</a>
             </li>
           </ul>

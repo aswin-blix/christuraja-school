@@ -45,7 +45,7 @@ export function Header() {
       <div className="bg-brand-900 text-white/85 text-[0.8rem]">
         <div className="container-x flex h-9 items-center justify-between gap-4">
           <p className="truncate">
-            <span className="text-gold-400">Motto</span> · {site.motto}
+            <span className="text-brand-100">Motto</span> · {site.motto}
           </p>
           <div className="flex items-center gap-5">
             <a href={site.phoneHref} className="hidden sm:inline-flex items-center gap-1.5 hover:text-white">

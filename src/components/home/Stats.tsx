@@ -43,7 +43,7 @@ export function Stats() {
           <div key={s.label} className="bg-paper px-6 py-8 sm:px-8">
             <dd className="font-display text-[clamp(2.2rem,4vw,3.2rem)] leading-none text-brand-900">
               <span data-count={s.value}>0</span>
-              <span className="text-gold-500">{s.suffix}</span>
+              <span className="text-brand-500">{s.suffix}</span>
             </dd>
             <dt className="mt-2 text-sm text-ink-600">{s.label}</dt>
           </div>

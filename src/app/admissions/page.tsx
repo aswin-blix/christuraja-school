@@ -33,7 +33,7 @@ export default function AdmissionsPage() {
           <ol className="grid gap-4 sm:grid-cols-2">
             {steps.map((s, i) => (
               <li key={s.title} className="rounded-[var(--radius-md)] border border-line p-5">
-                <span className="font-display text-2xl text-gold-500">{i + 1}</span>
+                <span className="font-display text-2xl text-brand-500">{i + 1}</span>
                 <h2 className="mt-2 font-sans font-semibold text-ink-900">{s.title}</h2>
                 <p className="mt-1 text-[0.92rem] leading-relaxed text-ink-600">{s.text}</p>
               </li>
@@ -114,7 +114,7 @@ export default function AdmissionsPage() {
                 "Four passport-size photographs",
               ].map((d) => (
                 <li key={d} className="flex gap-2.5">
-                  <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
+                  <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
                   {d}
                 </li>
               ))}
@@ -123,9 +123,9 @@ export default function AdmissionsPage() {
           <div className="rounded-[var(--radius-md)] bg-brand-900 p-6 text-white">
             <h2 className="font-sans font-semibold">Need help?</h2>
             <p className="mt-2 text-sm text-white/75">The school office is open on working days.</p>
-            <a href={site.phoneHref} className="mt-3 block font-display text-xl text-gold-400">{site.phone}</a>
+            <a href={site.phoneHref} className="mt-3 block font-display text-xl text-brand-100">{site.phone}</a>
             <a href={`mailto:${site.email}`} className="mt-1 block break-all text-sm text-white/85 hover:text-white">{site.email}</a>
-            <Link href="/academics/admission-policy" className="mt-4 inline-block text-sm font-semibold text-gold-400 hover:text-gold-500">
+            <Link href="/academics/admission-policy" className="mt-4 inline-block text-sm font-semibold text-brand-100 hover:text-white">
               Read the admission policy
             </Link>
           </div>

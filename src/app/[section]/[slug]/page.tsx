@@ -34,7 +34,7 @@ export default async function ContentPage({ params }: { params: Promise<Params> 
       <div className="container-x grid gap-14 py-16 lg:grid-cols-[1fr_17rem] lg:py-20">
         <article>
           {page.draft && process.env.NODE_ENV !== "production" && (
-            <p className="mb-8 rounded-md border border-gold-500/50 bg-gold-400/15 px-4 py-2 text-sm text-gold-700">
+            <p className="mb-8 rounded-md border border-brand-500/50 bg-brand-50 px-4 py-2 text-sm text-brand-700">
               Draft copy — to be confirmed by the school (shown in development only).
             </p>
           )}

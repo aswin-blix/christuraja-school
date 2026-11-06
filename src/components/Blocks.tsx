@@ -32,7 +32,7 @@ function BlockView({ block }: { block: Block }) {
         <ul className={`grid gap-3 ${block.columns === 2 ? "md:grid-cols-2" : ""}`}>
           {block.items.map((it) => (
             <li key={it} className="flex gap-3 text-[1.02rem] leading-relaxed text-ink-600">
-              <span aria-hidden="true" className="mt-[0.7em] h-2 w-2 shrink-0 rounded-full bg-gold-500" />
+              <span aria-hidden="true" className="mt-[0.7em] h-2 w-2 shrink-0 rounded-full bg-brand-500" />
               {it}
             </li>
           ))}
@@ -79,7 +79,7 @@ function BlockView({ block }: { block: Block }) {
                 <ul className="mt-3 space-y-2">
                   {c.items.map((it) => (
                     <li key={it} className="flex gap-2.5 text-[0.95rem] leading-snug text-ink-600">
-                      <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500" />
+                      <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
                       {it}
                     </li>
                   ))}
@@ -111,7 +111,7 @@ function BlockView({ block }: { block: Block }) {
 
     case "quote":
       return (
-        <blockquote className="border-l-4 border-gold-500 pl-6">
+        <blockquote className="border-l-4 border-brand-500 pl-6">
           <p className="font-display text-[clamp(1.4rem,2.4vw,1.9rem)] leading-snug text-brand-900">“{block.text}”</p>
           {block.by && <footer className="mt-3 text-ink-600">{block.by}</footer>}
         </blockquote>
@@ -122,7 +122,7 @@ function BlockView({ block }: { block: Block }) {
         <ol className="grid grid-cols-7 gap-2 sm:gap-3">
           {block.word.split("").map((ch, i) => (
             <li key={i} className="rounded-[var(--radius-sm)] bg-brand-900 p-2 text-center text-white sm:p-4">
-              <span className="block font-display text-[clamp(1.4rem,4vw,2.6rem)] text-gold-400">{ch}</span>
+              <span className="block font-display text-[clamp(1.4rem,4vw,2.6rem)] text-brand-100">{ch}</span>
               <span className="mt-1 block text-[0.6rem] leading-tight sm:text-xs">{block.meanings[i]}</span>
             </li>
           ))}
@@ -159,7 +159,7 @@ function BlockView({ block }: { block: Block }) {
           {block.href && (
             <Link
               href={block.href}
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-gold-500 px-6 py-3 font-semibold text-brand-900 hover:bg-gold-400"
+              className="inline-flex shrink-0 items-center justify-center rounded-full bg-brand-500 px-6 py-3 font-semibold text-white hover:bg-brand-100 hover:text-brand-900"
             >
               {block.cta ?? "Learn more"}
             </Link>

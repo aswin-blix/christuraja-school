@@ -135,7 +135,7 @@ export default function HomePage() {
           <ol className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-lg)] bg-white/10 md:grid-cols-5">
             {levels.map((l, i) => (
               <li key={l.name} className="bg-brand-900 p-6">
-                <span className="font-display text-sm text-gold-400">Level {["I", "II", "III", "IV", "V"][i]}</span>
+                <span className="font-display text-sm text-brand-100">Level {["I", "II", "III", "IV", "V"][i]}</span>
                 <h3 className="mt-3 text-xl">{l.name}</h3>
                 <p className="mt-1 text-sm font-medium text-white/60">{l.classes}</p>
                 <p className="mt-4 text-[0.92rem] leading-relaxed text-white/75">{l.text}</p>
@@ -143,7 +143,7 @@ export default function HomePage() {
             ))}
           </ol>
           <div className="mt-10">
-            <Button href="/academics/curriculum" variant="gold">See the curriculum and grading</Button>
+            <Button href="/academics/curriculum" variant="onDark">See the curriculum and grading</Button>
           </div>
         </div>
       </section>
@@ -219,7 +219,7 @@ export default function HomePage() {
       <section className="py-20 md:py-28">
         <div className="container-x">
           <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-brand-900 px-8 py-14 text-white md:px-16 md:py-20">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold-500/30 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand-500/30 blur-3xl" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]">
               <div>
                 <h2 className="text-[clamp(1.9rem,3.6vw,2.75rem)]">Admissions for 2026–27 are open</h2>
@@ -229,7 +229,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3">
-                <Button href="/admissions" variant="gold">Apply online</Button>
+                <Button href="/admissions" variant="onDark">Apply online</Button>
                 <Button href={site.phoneHref} variant="ghost">Call {site.phone}</Button>
               </div>
             </div>

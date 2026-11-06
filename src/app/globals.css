@@ -2,27 +2,29 @@
 
 /* ---------------------------------------------------------------------------
    Design tokens — Christuraja MHSS
-   Primary: royal blue (from the existing site). Gold accent used sparingly.
-   Change the brand here and the whole site follows.
+   Three brand colours only: the primary #00A2E8 (from the existing site),
+   one lighter tint and one darker shade. Everything else is neutral.
+   Change the three values here and the whole site follows.
 --------------------------------------------------------------------------- */
 :root {
-  --brand-50: #eaf3fb;
-  --brand-100: #cfe3f6;
-  --brand-500: #1a84d6;
-  --brand-600: #0570be; /* primary — sampled from the old site (#016EC0 footer, #0070C7 rules) */
-  --brand-700: #04598f;
-  --brand-900: #0a2f4f; /* deep navy of the same hue, for dark bands */
+  --brand-primary: #00a2e8;
+  --brand-light: #cdeefb;
+  --brand-dark: #005b86;
 
-  --gold-400: #e0bf4a;
-  --gold-500: #c9a227;
-  --gold-700: #8f7117;
+  /* Aliases used by the utilities (brand-N). Tints are the same three colours mixed with white. */
+  --brand-50: color-mix(in srgb, var(--brand-light) 40%, white);
+  --brand-100: var(--brand-light);
+  --brand-500: var(--brand-primary);
+  --brand-600: var(--brand-primary);
+  --brand-700: var(--brand-dark);
+  --brand-900: var(--brand-dark);
 
   --ink-900: #1a1f2e;
   --ink-600: #4b5168;
   --ink-400: #8a90a3;
   --line: #e1e8f0;
   --paper: #ffffff;
-  --paper-tint: #f4f8fc;
+  --paper-tint: #ffffff; /* backgrounds are white; sections are separated by borders and the dark band */
 
   --radius-sm: 6px;
   --radius-md: 14px;
@@ -36,9 +38,6 @@
   --color-brand-600: var(--brand-600);
   --color-brand-700: var(--brand-700);
   --color-brand-900: var(--brand-900);
-  --color-gold-400: var(--gold-400);
-  --color-gold-500: var(--gold-500);
-  --color-gold-700: var(--gold-700);
   --color-ink-900: var(--ink-900);
   --color-ink-600: var(--ink-600);
   --color-ink-400: var(--ink-400);
@@ -79,12 +78,12 @@ p {
 }
 
 ::selection {
-  background: var(--gold-400);
+  background: var(--brand-light);
   color: var(--brand-900);
 }
 
 :focus-visible {
-  outline: 3px solid var(--gold-500);
+  outline: 3px solid var(--brand-primary);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -109,12 +108,12 @@ p {
 .prose-school p + p { margin-top: 1.1em; }
 .prose-school strong { color: var(--ink-900); font-weight: 600; }
 
-/* Gold motto rule */
+/* Motto rule */
 .motto-rule {
   display: inline-block;
   width: 3.5rem;
   height: 3px;
-  background: var(--gold-500);
+  background: var(--brand-primary);
   border-radius: 2px;
 }
 
@@ -123,8 +122,8 @@ p {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 20% 10%, rgba(201, 162, 39, 0.3), transparent 55%),
-    linear-gradient(160deg, var(--brand-500), var(--brand-900));
+    radial-gradient(120% 90% at 20% 10%, rgba(205, 238, 251, 0.45), transparent 55%),
+    linear-gradient(160deg, var(--brand-primary), var(--brand-dark));
 }
 .ph::after {
   content: "";

@@ -116,7 +116,7 @@ export function Field({
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-ink-900">
         {label}
-        {required && <span aria-hidden="true" className="text-gold-700"> *</span>}
+        {required && <span aria-hidden="true" className="text-brand-700"> *</span>}
       </label>
       {options ? (
         <select id={id} name={name} required={required} defaultValue="" className={base}>

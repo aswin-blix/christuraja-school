@@ -24,7 +24,7 @@ export function Logo({ onDark = false }: { onDark?: boolean }) {
           fill={onDark ? "var(--brand-900)" : "#ffffff"}
           opacity={onDark ? 1 : 0.14}
         />
-        <path d="M20.6 13h2.8v6h6v2.8h-6v9h-2.8v-9h-6V19h6z" fill="var(--gold-500)" />
+        <path d="M20.6 13h2.8v6h6v2.8h-6v9h-2.8v-9h-6V19h6z" fill={onDark ? "var(--brand-500)" : "#ffffff"} />
       </svg>
       <span className="whitespace-nowrap leading-tight">
         <span

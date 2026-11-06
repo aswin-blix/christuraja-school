@@ -7,7 +7,7 @@ import { Button, Placeholder } from "@/components/ui";
 import { site } from "@/data/site";
 
 /**
- * The one orchestrated moment on the site: headline words rise, the gold rule
+ * The one orchestrated moment on the site: headline words rise, the rule
  * draws, and the photo collage settles into place.
  */
 export function Hero() {

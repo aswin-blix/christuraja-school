@@ -54,14 +54,14 @@ export function Button({
 }: {
   href: string;
   children: ReactNode;
-  variant?: "primary" | "secondary" | "ghost" | "gold";
+  variant?: "primary" | "secondary" | "ghost" | "onDark";
   className?: string;
 }) {
   const styles = {
     primary: "bg-brand-600 text-white hover:bg-brand-700",
     secondary: "border border-brand-600 text-brand-700 hover:bg-brand-50",
     ghost: "border border-white/30 text-white hover:bg-white/10",
-    gold: "bg-gold-500 text-brand-900 hover:bg-gold-400",
+    onDark: "bg-brand-500 text-white hover:bg-brand-100 hover:text-brand-900",
   }[variant];
   return (
     <Link
@@ -90,7 +90,7 @@ export function PageHero({
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-gold-500/20 blur-3xl"
+        className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl"
       />
       <div className="container-x relative py-16 md:py-24">
         <nav aria-label="Breadcrumb" className="text-sm text-white/65">
