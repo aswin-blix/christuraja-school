@@ -1,12 +1,12 @@
 # Christuraja MHSS website — handoff
 
 Redesign of **www.christurajamhss.com** (Christuraja Matriculation Higher Secondary School, Marthandam).
-Built 2026-11-06. Resume from this file.
+Built 2026-11-06, last updated 2026-11-07. Resume from this file.
 
 ## Status
 
 - Site built: home + 24 content pages + news (list and 5 items) + gallery + admissions form + alumni form + contact — 42 static routes.
-- `npm run lint`, `tsc --noEmit` and `npm run build` pass. Checked visually at 1440px and 390px (no horizontal scroll, no console errors).
+- `npm run lint`, `tsc --noEmit` and `npm run build` pass (rerun 2026-11-07 after the two-colour change). Checked visually at 1440px and 390px on 2026-11-06; the two-colour palette has only been checked at desktop width, so 390px needs a fresh look.
 - Not deployed. See `DEPLOY-VERCEL.md`.
 
 ## Stack
@@ -33,6 +33,12 @@ Next.js 16 (App Router, Turbopack, cache components), React 19, TypeScript, Tail
 - Content pages are data-driven so adding a page = adding an object to `pages.ts`.
 - Aadhaar number removed from the online form (collected at the office instead) — avoid storing it via an unsecured endpoint. Add back only if the form backend is secured.
 - Draft pages are flagged `draft: true` in `pages.ts`; a notice shows **in development only**.
+- Dev server: `allowedDevOrigins` in `next.config.ts` lists the LAN IP `192.168.31.64`. Without it the page loads but the `/_next/hmr` WebSocket is dropped, so hot reload fails. If the machine's IP changes, update that entry. It has no effect on production.
+
+## Known issues
+
+- White on `#00A2E8` fails WCAG AA contrast (see Colours above). It matters most for small text: footer, top strip and page intros.
+- `/[section]/[slug]` logs an `instant-shell-url-data` error in dev (the "1 insight" badge): `params` is read outside `<Suspense>`. The fix is a `<Suspense>` boundary or `export const instant = false`. Not fixed yet; the build still passes.
 
 ## Draft copy to confirm with the school
 
