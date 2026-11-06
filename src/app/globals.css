@@ -6,12 +6,12 @@
    Change the brand here and the whole site follows.
 --------------------------------------------------------------------------- */
 :root {
-  --brand-50: #eef2fb;
-  --brand-100: #d9e2f6;
-  --brand-500: #2b4fb3;
-  --brand-600: #1e3a8a; /* primary */
-  --brand-700: #172d6e;
-  --brand-900: #0f1f4d; /* navy */
+  --brand-50: #eaf3fb;
+  --brand-100: #cfe3f6;
+  --brand-500: #1a84d6;
+  --brand-600: #0570be; /* primary — sampled from the old site (#016EC0 footer, #0070C7 rules) */
+  --brand-700: #04598f;
+  --brand-900: #0a2f4f; /* deep navy of the same hue, for dark bands */
 
   --gold-400: #e0bf4a;
   --gold-500: #c9a227;
@@ -20,9 +20,9 @@
   --ink-900: #1a1f2e;
   --ink-600: #4b5168;
   --ink-400: #8a90a3;
-  --line: #e3e7f0;
+  --line: #e1e8f0;
   --paper: #ffffff;
-  --paper-tint: #f6f8fd;
+  --paper-tint: #f4f8fc;
 
   --radius-sm: 6px;
   --radius-md: 14px;
@@ -123,7 +123,7 @@ p {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 20% 10%, rgba(201, 162, 39, 0.35), transparent 55%),
+    radial-gradient(120% 90% at 20% 10%, rgba(201, 162, 39, 0.3), transparent 55%),
     linear-gradient(160deg, var(--brand-500), var(--brand-900));
 }
 .ph::after {

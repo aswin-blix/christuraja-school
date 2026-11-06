@@ -151,7 +151,7 @@ function BlockView({ block }: { block: Block }) {
 
     case "callout":
       return (
-        <div className="flex flex-col gap-5 rounded-[var(--radius-lg)] bg-brand-600 p-8 text-white md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-5 rounded-[var(--radius-lg)] bg-brand-900 p-8 text-white md:flex-row md:items-center md:justify-between">
           <div>
             <h3 className="text-2xl">{block.title}</h3>
             <p className="mt-2 max-w-xl text-white/85">{block.text}</p>

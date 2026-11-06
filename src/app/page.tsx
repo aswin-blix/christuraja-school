@@ -218,7 +218,7 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-20 md:py-28">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-brand-600 px-8 py-14 text-white md:px-16 md:py-20">
+          <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-brand-900 px-8 py-14 text-white md:px-16 md:py-20">
             <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold-500/30 blur-3xl" />
             <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]">
               <div>

@@ -17,14 +17,14 @@ export function Logo({ onDark = false }: { onDark?: boolean }) {
       >
         <path
           d="M22 2 40 9v12c0 10-7.6 17.5-18 21C11.6 38.5 4 31 4 21V9z"
-          fill={onDark ? "#ffffff" : "#1e3a8a"}
+          fill={onDark ? "#ffffff" : "var(--brand-600)"}
         />
         <path
           d="M22 6.5 36 12v9c0 8-5.9 14-14 17-8.1-3-14-9-14-17v-9z"
-          fill={onDark ? "#0f1f4d" : "#ffffff"}
+          fill={onDark ? "var(--brand-900)" : "#ffffff"}
           opacity={onDark ? 1 : 0.14}
         />
-        <path d="M20.6 13h2.8v6h6v2.8h-6v9h-2.8v-9h-6V19h6z" fill="#c9a227" />
+        <path d="M20.6 13h2.8v6h6v2.8h-6v9h-2.8v-9h-6V19h6z" fill="var(--gold-500)" />
       </svg>
       <span className="whitespace-nowrap leading-tight">
         <span
