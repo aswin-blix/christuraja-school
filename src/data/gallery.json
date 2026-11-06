@@ -1,0 +1,18 @@
+{
+  "albums": [
+    { "slug": "campus", "title": "Campus", "count": 6, "description": "The four blocks, gardens and grounds of Christurajapuram." },
+    { "slug": "annual-day", "title": "Annual Day", "count": 8, "description": "Cultural programmes and prize distribution." },
+    { "slug": "sports-day", "title": "Sports Day", "count": 8, "description": "March past, athletics and inter-house finals." },
+    { "slug": "laboratories", "title": "Laboratories", "count": 5, "description": "Physics, Chemistry, Biology, Computer and Language labs." },
+    { "slug": "kindergarten", "title": "Kindergarten", "count": 6, "description": "Our youngest learners at play and in class." },
+    { "slug": "celebrations", "title": "Celebrations", "count": 6, "description": "Christmas, Pongal, Independence Day and more." }
+  ],
+  "videos": [
+    { "title": "Campus tour — the main block", "duration": "0:16", "youtubeId": "" },
+    { "title": "Campus tour — laboratories", "duration": "0:13", "youtubeId": "" },
+    { "title": "Campus tour — library", "duration": "0:09", "youtubeId": "" },
+    { "title": "Campus tour — playground", "duration": "0:13", "youtubeId": "" },
+    { "title": "Annual Day highlights", "duration": "0:30", "youtubeId": "" },
+    { "title": "Sports Day highlights", "duration": "0:40", "youtubeId": "" }
+  ]
+}
