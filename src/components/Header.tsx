@@ -42,16 +42,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* Utility strip */}
-      <div className="bg-brand-900 text-white/85 text-[0.8rem]">
+      <div className="bg-brand text-white text-[0.8rem]">
         <div className="container-x flex h-9 items-center justify-between gap-4">
           <p className="truncate">
-            <span className="text-brand-100">Motto</span> · {site.motto}
+            <span className="text-white">Motto</span> · {site.motto}
           </p>
           <div className="flex items-center gap-5">
-            <a href={site.phoneHref} className="hidden sm:inline-flex items-center gap-1.5 hover:text-white">
+            <a href={site.phoneHref} className="hidden sm:inline-flex items-center gap-1.5 hover:underline">
               <Phone size={13} aria-hidden="true" /> {site.phone}
             </a>
-            <a href={site.staffLogin} target="_blank" rel="noreferrer" className="hover:text-white">
+            <a href={site.staffLogin} target="_blank" rel="noreferrer" className="hover:underline">
               Staff login
             </a>
           </div>
@@ -61,7 +61,7 @@ export function Header() {
       {/* Main bar */}
       <div
         className={`border-b border-line bg-paper/95 backdrop-blur transition-shadow ${
-          scrolled ? "shadow-[0_8px_30px_-18px_rgba(15,31,77,0.45)]" : ""
+          scrolled ? "shadow-[0_8px_30px_-18px_rgba(0,162,232,0.45)]" : ""
         }`}
       >
         <div className="container-x flex h-[4.5rem] items-center justify-between gap-6">
@@ -86,8 +86,8 @@ export function Header() {
                   <Link
                     href={item.href}
                     onClick={closeMenus}
-                    className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[0.9rem] font-medium transition-colors hover:bg-brand-50 hover:text-brand-700 xl:px-3 ${
-                      isActive(item.href) ? "text-brand-700" : "text-ink-900"
+                    className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[0.9rem] font-medium transition-colors hover:text-brand xl:px-3 ${
+                      isActive(item.href) ? "text-brand" : "text-ink-900"
                     }`}
                     aria-haspopup={item.children ? "true" : undefined}
                     aria-expanded={item.children ? isOpen : undefined}
@@ -105,7 +105,7 @@ export function Header() {
                       }`}
                     >
                       <ul
-                        className={`rounded-lg border border-line bg-paper p-2 shadow-[0_24px_60px_-24px_rgba(15,31,77,0.45)] ${
+                        className={`rounded-lg border border-line bg-paper p-2 shadow-[0_24px_60px_-24px_rgba(0,162,232,0.45)] ${
                           item.children.length > 6 ? "grid w-[34rem] grid-cols-2" : "w-72"
                         }`}
                       >
@@ -114,8 +114,8 @@ export function Header() {
                             <Link
                               href={child.href}
                               onClick={closeMenus}
-                              className={`block rounded-md px-3 py-2 text-[0.9rem] hover:bg-brand-50 hover:text-brand-700 ${
-                                pathname === child.href ? "text-brand-700 font-semibold" : "text-ink-900"
+                              className={`block rounded-md px-3 py-2 text-[0.9rem] hover:text-brand ${
+                                pathname === child.href ? "text-brand font-semibold" : "text-ink-900"
                               }`}
                             >
                               {child.label}
@@ -137,14 +137,14 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/admissions"
-              className="hidden sm:inline-flex items-center whitespace-nowrap rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700"
+              className="hidden sm:inline-flex items-center whitespace-nowrap rounded-full border border-brand bg-brand text-white hover:bg-white hover:text-brand px-5 py-2.5 text-sm font-semibold transition-colors"
             >
               Apply for admission
             </Link>
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-brand-900 hover:bg-brand-50 lg:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-md text-brand hover:bg-brand hover:underline lg:hidden"
               aria-label="Open menu"
               aria-expanded={open}
             >
@@ -165,7 +165,7 @@ export function Header() {
           >
             <button
               type="button"
-              className="absolute inset-0 bg-brand-900/60"
+              className="absolute inset-0 bg-brand/60"
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             />
@@ -184,7 +184,7 @@ export function Header() {
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-brand-50"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-md hover:bg-brand hover:underline"
                   aria-label="Close menu"
                 >
                   <X />
@@ -198,7 +198,7 @@ export function Header() {
                         <>
                           <button
                             type="button"
-                            className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left font-medium hover:bg-brand-50"
+                            className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left font-medium hover:text-brand"
                             aria-expanded={mobileSection === item.label}
                             onClick={() => setMobileSection(mobileSection === item.label ? null : item.label)}
                           >
@@ -215,14 +215,14 @@ export function Header() {
                                 initial={{ height: 0, opacity: 0 }}
                                 animate={{ height: "auto", opacity: 1 }}
                                 exit={{ height: 0, opacity: 0 }}
-                                className="overflow-hidden border-l-2 border-brand-100 ml-4 pl-2"
+                                className="overflow-hidden border-l-2 border-brand ml-4 pl-2"
                               >
                                 {item.children.map((child) => (
                                   <li key={child.href}>
                                     <Link
                                       href={child.href}
                                       onClick={close}
-                                      className="block rounded-md px-3 py-2.5 text-[0.95rem] text-ink-600 hover:bg-brand-50 hover:text-brand-700"
+                                      className="block rounded-md px-3 py-2.5 text-[0.95rem] text-ink-600 hover:text-brand"
                                     >
                                       {child.label}
                                     </Link>
@@ -233,7 +233,7 @@ export function Header() {
                           </AnimatePresence>
                         </>
                       ) : (
-                        <Link href={item.href} onClick={close} className="block rounded-md px-3 py-3 font-medium hover:bg-brand-50">
+                        <Link href={item.href} onClick={close} className="block rounded-md px-3 py-3 font-medium hover:text-brand">
                           {item.label}
                         </Link>
                       )}
@@ -245,7 +245,7 @@ export function Header() {
                 <Link
                   href="/admissions"
                   onClick={close}
-                  className="flex items-center justify-center rounded-full bg-brand-600 px-5 py-3 font-semibold text-white"
+                  className="flex items-center justify-center rounded-full bg-brand px-5 py-3 font-semibold text-white"
                 >
                   Apply for admission
                 </Link>

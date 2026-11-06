@@ -24,7 +24,7 @@ export default function AlumniPage() {
       <section className="container-x grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-20">
         <div>
           <span className="motto-rule" aria-hidden="true" />
-          <h2 className="mt-4 text-[clamp(1.6rem,3vw,2.2rem)] text-brand-900">Highlights from the first reunion</h2>
+          <h2 className="mt-4 text-[clamp(1.6rem,3vw,2.2rem)] text-brand">Highlights from the first reunion</h2>
           <div className="prose-school mt-5">
             <p>
               The association brought former students back to the campus at Christurajapuram for its first reunion —
@@ -45,7 +45,7 @@ export default function AlumniPage() {
 
       <section className="bg-paper-tint py-16 lg:py-20">
         <div className="container-x max-w-4xl">
-          <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] text-brand-900">New member registration</h2>
+          <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] text-brand">New member registration</h2>
           <p className="mt-2 text-ink-600">Open to all former students who completed Class X, XI or XII at Christuraja.</p>
           <div className="mt-8">
             <FormShell

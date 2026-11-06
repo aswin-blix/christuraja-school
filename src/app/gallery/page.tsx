@@ -18,7 +18,7 @@ export default function GalleryPage() {
       />
 
       <section className="container-x py-16 lg:py-20">
-        <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] text-brand-900">Photo albums</h2>
+        <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] text-brand">Photo albums</h2>
         <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {gallery.albums.map((a) => (
             <li key={a.slug} className="group">
@@ -35,20 +35,20 @@ export default function GalleryPage() {
         </ul>
       </section>
 
-      <section className="bg-brand-900 py-16 text-white lg:py-20">
+      <section className="py-16 lg:py-20">
         <div className="container-x">
-          <h2 className="text-[clamp(1.6rem,3vw,2.2rem)]">Campus tour videos</h2>
-          <p className="mt-3 max-w-xl text-white/75">Short walk-throughs of the blocks, labs, library and grounds.</p>
+          <h2 className="text-[clamp(1.6rem,3vw,2.2rem)] text-brand">Campus tour videos</h2>
+          <p className="mt-3 max-w-xl text-ink-600">Short walk-throughs of the blocks, labs, library and grounds.</p>
           <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.videos.map((v) => (
               <li key={v.title} className="relative overflow-hidden rounded-[var(--radius-md)]">
                 <Placeholder label={v.title} ratio="aspect-video" />
                 <span className="absolute inset-0 grid place-items-center">
-                  <span className="grid h-14 w-14 place-items-center rounded-full bg-white/90 text-brand-900 shadow-lg">
+                  <span className="grid h-14 w-14 place-items-center rounded-full bg-white text-brand shadow-lg">
                     <Play size={22} className="ml-0.5" aria-hidden="true" />
                   </span>
                 </span>
-                <span className="absolute right-3 top-3 rounded bg-brand-900/70 px-2 py-0.5 text-xs">{v.duration}</span>
+                <span className="absolute right-3 top-3 rounded bg-white px-2 py-0.5 text-xs text-brand">{v.duration}</span>
               </li>
             ))}
           </ul>

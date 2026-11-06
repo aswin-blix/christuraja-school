@@ -61,10 +61,10 @@ export function FormShell({
   if (status === "sent") {
     return (
       <div className="rounded-[var(--radius-lg)] border border-line bg-paper-tint p-10 text-center">
-        <CheckCircle2 className="mx-auto h-12 w-12 text-brand-600" aria-hidden="true" />
-        <h2 className="mt-4 text-2xl text-brand-900">{successTitle}</h2>
+        <CheckCircle2 className="mx-auto h-12 w-12 text-brand" aria-hidden="true" />
+        <h2 className="mt-4 text-2xl text-brand">{successTitle}</h2>
         <p className="mx-auto mt-2 max-w-md text-ink-600">{successText}</p>
-        <button type="button" onClick={() => setStatus("idle")} className="mt-6 text-sm font-semibold text-brand-600 hover:text-brand-700">
+        <button type="button" onClick={() => setStatus("idle")} className="mt-6 text-sm font-semibold text-brand hover:text-brand">
           Send another
         </button>
       </div>
@@ -82,7 +82,7 @@ export function FormShell({
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex items-center justify-center rounded-full bg-brand-600 px-7 py-3 font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
+        className="inline-flex items-center justify-center rounded-full border border-brand bg-brand text-white hover:bg-white hover:text-brand px-7 py-3 font-semibold transition-colors disabled:opacity-60"
       >
         {status === "sending" ? "Sending…" : submitLabel}
       </button>
@@ -111,12 +111,12 @@ export function Field({
 }) {
   const id = `f-${name}`;
   const base =
-    "mt-1.5 w-full rounded-md border border-line bg-paper px-3.5 py-2.5 text-[0.95rem] text-ink-900 placeholder:text-ink-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100";
+    "mt-1.5 w-full rounded-md border border-line bg-paper px-3.5 py-2.5 text-[0.95rem] text-ink-900 placeholder:text-ink-400 focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand";
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-ink-900">
         {label}
-        {required && <span aria-hidden="true" className="text-brand-700"> *</span>}
+        {required && <span aria-hidden="true" className="text-brand"> *</span>}
       </label>
       {options ? (
         <select id={id} name={name} required={required} defaultValue="" className={base}>
@@ -138,7 +138,7 @@ export function Field({
 export function Fieldset({ legend, children }: { legend: string; children: ReactNode }) {
   return (
     <fieldset className="rounded-[var(--radius-md)] border border-line p-6">
-      <legend className="px-2 font-sans text-sm font-semibold text-brand-900">{legend}</legend>
+      <legend className="px-2 font-sans text-sm font-semibold text-brand">{legend}</legend>
       <div className="grid gap-5 sm:grid-cols-2">{children}</div>
     </fieldset>
   );

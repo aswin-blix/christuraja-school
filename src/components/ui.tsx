@@ -36,11 +36,11 @@ export function SectionTitle({
   return (
     <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       <span className="motto-rule" aria-hidden="true" />
-      <h2 className={`mt-4 text-[clamp(1.9rem,3.6vw,2.75rem)] ${onDark ? "text-white" : "text-brand-900"}`}>
+      <h2 className={`mt-4 text-[clamp(1.9rem,3.6vw,2.75rem)] ${onDark ? "text-white" : "text-brand"}`}>
         {title}
       </h2>
       {lede && (
-        <p className={`mt-4 text-lg leading-relaxed ${onDark ? "text-white/75" : "text-ink-600"}`}>{lede}</p>
+        <p className={`mt-4 text-lg leading-relaxed ${onDark ? "text-white" : "text-ink-600"}`}>{lede}</p>
       )}
     </div>
   );
@@ -58,10 +58,10 @@ export function Button({
   className?: string;
 }) {
   const styles = {
-    primary: "bg-brand-600 text-white hover:bg-brand-700",
-    secondary: "border border-brand-600 text-brand-700 hover:bg-brand-50",
-    ghost: "border border-white/30 text-white hover:bg-white/10",
-    onDark: "bg-brand-500 text-white hover:bg-brand-100 hover:text-brand-900",
+    primary: "border border-brand bg-brand text-white hover:bg-white hover:text-brand",
+    secondary: "border border-brand text-brand hover:bg-brand hover:underline",
+    ghost: "border border-white text-white hover:bg-white hover:text-brand",
+    onDark: "border border-white bg-white text-brand hover:bg-transparent hover:underline",
   }[variant];
   return (
     <Link
@@ -83,24 +83,16 @@ export function PageHero({
   crumbs: { label: string; href?: string }[];
 }) {
   return (
-    <section className="relative overflow-hidden bg-brand-900 text-white">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full bg-brand-500/40 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-brand-500/20 blur-3xl"
-      />
+    <section className="relative overflow-hidden bg-brand text-white">
       <div className="container-x relative py-16 md:py-24">
-        <nav aria-label="Breadcrumb" className="text-sm text-white/65">
+        <nav aria-label="Breadcrumb" className="text-sm text-white">
           <ol className="flex flex-wrap items-center gap-2">
-            <li><Link href="/" className="hover:text-white">Home</Link></li>
+            <li><Link href="/" className="hover:underline">Home</Link></li>
             {crumbs.map((c, i) => (
               <li key={c.label} className="flex items-center gap-2">
                 <span aria-hidden="true">/</span>
                 {c.href && i < crumbs.length - 1 ? (
-                  <Link href={c.href} className="hover:text-white">{c.label}</Link>
+                  <Link href={c.href} className="hover:underline">{c.label}</Link>
                 ) : (
                   <span aria-current="page" className="text-white">{c.label}</span>
                 )}
@@ -109,7 +101,7 @@ export function PageHero({
           </ol>
         </nav>
         <h1 className="mt-6 max-w-3xl text-[clamp(2.2rem,5vw,3.75rem)]">{title}</h1>
-        {lede && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/80">{lede}</p>}
+        {lede && <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white">{lede}</p>}
       </div>
     </section>
   );

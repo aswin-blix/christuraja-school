@@ -45,12 +45,12 @@ export default function HomePage() {
       {/* News ticker */}
       <div className="border-y border-line bg-paper-tint">
         <div className="container-x flex items-center gap-6 overflow-hidden py-3 text-sm">
-          <span className="shrink-0 rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white">Latest</span>
+          <span className="shrink-0 rounded-full bg-brand px-3 py-1 text-xs font-semibold text-white">Latest</span>
           <div className="relative flex-1 overflow-hidden">
             <div className="marquee flex w-max gap-12">
               {[...latest, ...latest].map((n, i) => (
-                <Link key={`${n.slug}-${i}`} href={`/news/${n.slug}`} className="whitespace-nowrap text-ink-600 hover:text-brand-700">
-                  <span className="text-brand-600">{formatDate(n.date)}</span> — {n.title}
+                <Link key={`${n.slug}-${i}`} href={`/news/${n.slug}`} className="whitespace-nowrap text-ink-600 hover:text-brand">
+                  <span className="text-brand">{formatDate(n.date)}</span> — {n.title}
                 </Link>
               ))}
             </div>
@@ -80,8 +80,8 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.1} className="relative">
             <Placeholder label="The campus at Christurajapuram" ratio="aspect-[5/4]" className="rounded-[var(--radius-lg)]" />
-            <div className="absolute -bottom-6 right-4 max-w-[22rem] rounded-[var(--radius-md)] bg-brand-900 p-5 text-white shadow-xl sm:-right-6">
-              <p className="text-sm text-white/70">Four blocks named after</p>
+            <div className="absolute -bottom-6 right-4 max-w-[22rem] rounded-[var(--radius-md)] border-2 border-white bg-brand p-5 text-white shadow-xl sm:-right-6">
+              <p className="text-sm text-white">Four blocks named after</p>
               <ul className="mt-1 font-display text-lg leading-snug">
                 {["St. Francis of Assisi", "Msgr. Joseph Kuzhinjalil", "Mother Mary Kallarackal", "St. Little Therese"].map((b) => (
                   <li key={b} className="whitespace-nowrap">{b}</li>
@@ -109,9 +109,9 @@ export default function HomePage() {
                 <li className="h-full">
                   <Link
                     href={w.href}
-                    className="group flex h-full flex-col rounded-[var(--radius-md)] border border-line bg-paper p-6 transition-colors hover:border-brand-500 hover:bg-brand-50"
+                    className="group flex h-full flex-col rounded-[var(--radius-md)] border border-line bg-paper p-6 transition-colors hover:border-brand"
                   >
-                    <w.icon className="h-7 w-7 text-brand-600" aria-hidden="true" />
+                    <w.icon className="h-7 w-7 text-brand" aria-hidden="true" />
                     <h3 className="mt-5 font-sans text-[1.05rem] font-semibold text-ink-900">{w.title}</h3>
                     <p className="mt-2 text-[0.92rem] leading-relaxed text-ink-600">{w.text}</p>
                   </Link>
@@ -123,7 +123,7 @@ export default function HomePage() {
       </section>
 
       {/* Levels */}
-      <section className="bg-brand-900 py-20 text-white md:py-28">
+      <section className="bg-brand py-20 text-white md:py-28">
         <div className="container-x">
           <Reveal>
             <SectionTitle
@@ -132,13 +132,13 @@ export default function HomePage() {
               lede="Each level has its own rhythm of tests, prizes and activities, and every child is known by name as they move up."
             />
           </Reveal>
-          <ol className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-lg)] bg-white/10 md:grid-cols-5">
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-[var(--radius-lg)] bg-white md:grid-cols-5">
             {levels.map((l, i) => (
-              <li key={l.name} className="bg-brand-900 p-6">
-                <span className="font-display text-sm text-brand-100">Level {["I", "II", "III", "IV", "V"][i]}</span>
+              <li key={l.name} className="bg-brand p-6">
+                <span className="font-display text-sm text-white">Level {["I", "II", "III", "IV", "V"][i]}</span>
                 <h3 className="mt-3 text-xl">{l.name}</h3>
-                <p className="mt-1 text-sm font-medium text-white/60">{l.classes}</p>
-                <p className="mt-4 text-[0.92rem] leading-relaxed text-white/75">{l.text}</p>
+                <p className="mt-1 text-sm font-medium text-white">{l.classes}</p>
+                <p className="mt-4 text-[0.92rem] leading-relaxed text-white">{l.text}</p>
               </li>
             ))}
           </ol>
@@ -157,7 +157,7 @@ export default function HomePage() {
           <Reveal delay={0.1}>
             <span className="motto-rule" aria-hidden="true" />
             <blockquote className="mt-6">
-              <p className="font-display text-[clamp(1.5rem,2.6vw,2.1rem)] leading-snug text-brand-900">
+              <p className="font-display text-[clamp(1.5rem,2.6vw,2.1rem)] leading-snug text-brand">
                 “Our school takes students on a voyage of discovery towards excellence. It strives first to make good
                 human beings, and then professionals — that is our priority.”
               </p>
@@ -186,8 +186,8 @@ export default function HomePage() {
                   <Link href={`/news/${n.slug}`} className="group grid gap-2 py-5 sm:grid-cols-[7rem_1fr] sm:gap-6">
                     <time dateTime={n.date} className="text-sm text-ink-600">{formatDate(n.date)}</time>
                     <div>
-                      <span className="text-xs font-semibold text-brand-600">{n.category}</span>
-                      <h3 className="mt-1 font-sans text-lg font-semibold text-ink-900 group-hover:text-brand-700">{n.title}</h3>
+                      <span className="text-xs font-semibold text-brand">{n.category}</span>
+                      <h3 className="mt-1 font-sans text-lg font-semibold text-ink-900 group-hover:text-brand">{n.title}</h3>
                       <p className="mt-1 text-[0.95rem] text-ink-600">{n.summary}</p>
                     </div>
                   </Link>
@@ -218,12 +218,11 @@ export default function HomePage() {
       {/* CTA */}
       <section className="py-20 md:py-28">
         <div className="container-x">
-          <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-brand-900 px-8 py-14 text-white md:px-16 md:py-20">
-            <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand-500/30 blur-3xl" />
+          <div className="relative overflow-hidden rounded-[var(--radius-lg)] bg-brand px-8 py-14 text-white md:px-16 md:py-20">
             <div className="relative grid items-center gap-8 lg:grid-cols-[1fr_auto]">
               <div>
                 <h2 className="text-[clamp(1.9rem,3.6vw,2.75rem)]">Admissions for 2026–27 are open</h2>
-                <p className="mt-4 max-w-xl text-lg text-white/85">
+                <p className="mt-4 max-w-xl text-lg text-white">
                   Pre-KG to Standard IX and Standard XI. The academic year begins in June. Admission is open to all,
                   irrespective of caste, creed or status.
                 </p>

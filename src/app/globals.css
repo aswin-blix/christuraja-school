@@ -2,29 +2,19 @@
 
 /* ---------------------------------------------------------------------------
    Design tokens — Christuraja MHSS
-   Three brand colours only: the primary #00A2E8 (from the existing site),
-   one lighter tint and one darker shade. Everything else is neutral.
-   Change the three values here and the whole site follows.
+   Two colours only: the primary #00A2E8 (from the existing site) and white.
+   Grey is kept for reading text and hairlines. Change --brand here and the
+   whole site follows.
 --------------------------------------------------------------------------- */
 :root {
-  --brand-primary: #00a2e8;
-  --brand-light: #cdeefb;
-  --brand-dark: #005b86;
-
-  /* Aliases used by the utilities (brand-N). Tints are the same three colours mixed with white. */
-  --brand-50: color-mix(in srgb, var(--brand-light) 40%, white);
-  --brand-100: var(--brand-light);
-  --brand-500: var(--brand-primary);
-  --brand-600: var(--brand-primary);
-  --brand-700: var(--brand-dark);
-  --brand-900: var(--brand-dark);
+  --brand: #00a2e8;
 
   --ink-900: #1a1f2e;
   --ink-600: #4b5168;
   --ink-400: #8a90a3;
   --line: #e1e8f0;
   --paper: #ffffff;
-  --paper-tint: #ffffff; /* backgrounds are white; sections are separated by borders and the dark band */
+  --paper-tint: #ffffff;
 
   --radius-sm: 6px;
   --radius-md: 14px;
@@ -32,12 +22,7 @@
 }
 
 @theme inline {
-  --color-brand-50: var(--brand-50);
-  --color-brand-100: var(--brand-100);
-  --color-brand-500: var(--brand-500);
-  --color-brand-600: var(--brand-600);
-  --color-brand-700: var(--brand-700);
-  --color-brand-900: var(--brand-900);
+  --color-brand: var(--brand);
   --color-ink-900: var(--ink-900);
   --color-ink-600: var(--ink-600);
   --color-ink-400: var(--ink-400);
@@ -78,15 +63,16 @@ p {
 }
 
 ::selection {
-  background: var(--brand-light);
-  color: var(--brand-900);
+  background: var(--brand);
+  color: #ffffff;
 }
 
 :focus-visible {
-  outline: 3px solid var(--brand-primary);
+  outline: 3px solid var(--brand);
   outline-offset: 3px;
   border-radius: 4px;
 }
+.bg-brand :focus-visible { outline-color: #ffffff; }
 
 /* Layout helpers */
 .container-x {
@@ -113,17 +99,18 @@ p {
   display: inline-block;
   width: 3.5rem;
   height: 3px;
-  background: var(--brand-primary);
+  background: var(--brand);
   border-radius: 2px;
 }
+.bg-brand .motto-rule { background: #ffffff; }
 
 /* Placeholder image blocks (swap for real photos) */
 .ph {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 20% 10%, rgba(205, 238, 251, 0.45), transparent 55%),
-    linear-gradient(160deg, var(--brand-primary), var(--brand-dark));
+    radial-gradient(120% 90% at 20% 10%, rgba(255, 255, 255, 0.18), transparent 55%),
+    var(--brand);
 }
 .ph::after {
   content: "";

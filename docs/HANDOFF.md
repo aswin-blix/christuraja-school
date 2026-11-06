@@ -28,8 +28,7 @@ Next.js 16 (App Router, Turbopack, cache components), React 19, TypeScript, Tail
 
 ## Decisions
 
-- **Colours**: exactly three brand colours (Aswin's brief) — primary `#00A2E8` (the old site's blue), light `#CDEEFB`, dark `#005B86` — on white backgrounds, plus grey text neutrals. Set in `globals.css` as `--brand-primary / --brand-light / --brand-dark`; the `brand-N` utilities alias them (`brand-50` is the light tint mixed with white). No gold accent.
-- White text on `#00A2E8` is ~2.9:1 contrast (passes WCAG AA only for large text). If the school wants AA on buttons, switch `primary` in `Button` and the header CTA to `bg-brand-700` (dark) — one-line change.
+- **Colours**: two colours only (Aswin's brief) — primary `#00A2E8` (the old site's blue) and white, plus grey for reading text and hairlines. Set once in `globals.css` as `--brand`, used through the `brand` utility (`bg-brand`, `text-brand`). Hover states invert blue and white rather than shifting shade. No gold accent, no tints or dark shades. Known trade-off: white on `#00A2E8` is about 2.9:1, below the WCAG AA minimum for text (4.5:1, or 3:1 for large text).
 - Old nav structure kept in full (Home/About, Academics, Facilities → "Campus life", Misc/News, Gallery, Online Admission, Alumni, Contact), with clearer labels.
 - Content pages are data-driven so adding a page = adding an object to `pages.ts`.
 - Aadhaar number removed from the online form (collected at the office instead) — avoid storing it via an unsecured endpoint. Add back only if the form backend is secured.

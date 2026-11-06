@@ -34,7 +34,7 @@ export default async function ContentPage({ params }: { params: Promise<Params> 
       <div className="container-x grid gap-14 py-16 lg:grid-cols-[1fr_17rem] lg:py-20">
         <article>
           {page.draft && process.env.NODE_ENV !== "production" && (
-            <p className="mb-8 rounded-md border border-brand-500/50 bg-brand-50 px-4 py-2 text-sm text-brand-700">
+            <p className="mb-8 rounded-md border border-brand px-4 py-2 text-sm text-brand">
               Draft copy — to be confirmed by the school (shown in development only).
             </p>
           )}
@@ -53,8 +53,8 @@ export default async function ContentPage({ params }: { params: Promise<Params> 
                     aria-current={active ? "page" : undefined}
                     className={`-ml-px block border-l-2 py-2 pl-4 text-[0.92rem] transition-colors ${
                       active
-                        ? "border-brand-600 font-semibold text-brand-700"
-                        : "border-transparent text-ink-600 hover:border-brand-100 hover:text-brand-700"
+                        ? "border-brand font-semibold text-brand"
+                        : "border-transparent text-ink-600 hover:border-brand hover:text-brand"
                     }`}
                   >
                     {s.title}

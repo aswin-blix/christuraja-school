@@ -22,13 +22,13 @@ export default function NewsPage() {
             <li key={n.slug}>
               <Link
                 href={`/news/${n.slug}`}
-                className="group flex h-full flex-col rounded-[var(--radius-md)] border border-line bg-paper p-6 transition-colors hover:border-brand-500 hover:bg-brand-50"
+                className="group flex h-full flex-col rounded-[var(--radius-md)] border border-line bg-paper p-6 transition-colors hover:border-brand"
               >
                 <div className="flex items-center justify-between text-sm">
-                  <span className="font-semibold text-brand-600">{n.category}</span>
+                  <span className="font-semibold text-brand">{n.category}</span>
                   <time dateTime={n.date} className="text-ink-600">{formatDate(n.date)}</time>
                 </div>
-                <h2 className="mt-4 font-sans text-lg font-semibold leading-snug text-ink-900 group-hover:text-brand-700">{n.title}</h2>
+                <h2 className="mt-4 font-sans text-lg font-semibold leading-snug text-ink-900 group-hover:text-brand">{n.title}</h2>
                 <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-600">{n.summary}</p>
               </Link>
             </li>

@@ -41,9 +41,9 @@ export function Stats() {
       <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-lg)] border border-line bg-line lg:grid-cols-4">
         {site.stats.map((s) => (
           <div key={s.label} className="bg-paper px-6 py-8 sm:px-8">
-            <dd className="font-display text-[clamp(2.2rem,4vw,3.2rem)] leading-none text-brand-900">
+            <dd className="font-display text-[clamp(2.2rem,4vw,3.2rem)] leading-none text-brand">
               <span data-count={s.value}>0</span>
-              <span className="text-brand-500">{s.suffix}</span>
+              <span className="text-brand">{s.suffix}</span>
             </dd>
             <dt className="mt-2 text-sm text-ink-600">{s.label}</dt>
           </div>

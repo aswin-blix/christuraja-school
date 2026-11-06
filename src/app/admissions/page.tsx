@@ -33,14 +33,14 @@ export default function AdmissionsPage() {
           <ol className="grid gap-4 sm:grid-cols-2">
             {steps.map((s, i) => (
               <li key={s.title} className="rounded-[var(--radius-md)] border border-line p-5">
-                <span className="font-display text-2xl text-brand-500">{i + 1}</span>
+                <span className="font-display text-2xl text-brand">{i + 1}</span>
                 <h2 className="mt-2 font-sans font-semibold text-ink-900">{s.title}</h2>
                 <p className="mt-1 text-[0.92rem] leading-relaxed text-ink-600">{s.text}</p>
               </li>
             ))}
           </ol>
 
-          <h2 className="mt-14 text-[clamp(1.6rem,3vw,2.2rem)] text-brand-900">Application form</h2>
+          <h2 className="mt-14 text-[clamp(1.6rem,3vw,2.2rem)] text-brand">Application form</h2>
           <p className="mt-2 text-ink-600">Fields marked * are required.</p>
 
           <div className="mt-8">
@@ -88,11 +88,11 @@ export default function AdmissionsPage() {
 
               <div className="space-y-3 text-sm text-ink-600">
                 <label className="flex gap-3">
-                  <input type="checkbox" name="declaration1" required className="mt-1 h-4 w-4 accent-brand-600" />
+                  <input type="checkbox" name="declaration1" required className="mt-1 h-4 w-4 accent-brand" />
                   I declare that the statements above are correct and that the pupil has not attended any school other than those mentioned.
                 </label>
                 <label className="flex gap-3">
-                  <input type="checkbox" name="declaration2" required className="mt-1 h-4 w-4 accent-brand-600" />
+                  <input type="checkbox" name="declaration2" required className="mt-1 h-4 w-4 accent-brand" />
                   I declare that I will not ask for a change in the date of birth in future.
                 </label>
               </div>
@@ -102,7 +102,7 @@ export default function AdmissionsPage() {
 
         <aside className="space-y-6 lg:sticky lg:top-32 lg:self-start">
           <div className="rounded-[var(--radius-md)] border border-line p-6">
-            <h2 className="font-sans font-semibold text-brand-900">Documents to bring</h2>
+            <h2 className="font-sans font-semibold text-brand">Documents to bring</h2>
             <ul className="mt-3 space-y-2 text-[0.92rem] text-ink-600">
               {[
                 "Birth certificate",
@@ -114,18 +114,18 @@ export default function AdmissionsPage() {
                 "Four passport-size photographs",
               ].map((d) => (
                 <li key={d} className="flex gap-2.5">
-                  <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
+                  <span aria-hidden="true" className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-brand" />
                   {d}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-[var(--radius-md)] bg-brand-900 p-6 text-white">
+          <div className="rounded-[var(--radius-md)] bg-brand p-6 text-white">
             <h2 className="font-sans font-semibold">Need help?</h2>
-            <p className="mt-2 text-sm text-white/75">The school office is open on working days.</p>
-            <a href={site.phoneHref} className="mt-3 block font-display text-xl text-brand-100">{site.phone}</a>
-            <a href={`mailto:${site.email}`} className="mt-1 block break-all text-sm text-white/85 hover:text-white">{site.email}</a>
-            <Link href="/academics/admission-policy" className="mt-4 inline-block text-sm font-semibold text-brand-100 hover:text-white">
+            <p className="mt-2 text-sm text-white">The school office is open on working days.</p>
+            <a href={site.phoneHref} className="mt-3 block font-display text-xl text-white">{site.phone}</a>
+            <a href={`mailto:${site.email}`} className="mt-1 block break-all text-sm text-white hover:underline">{site.email}</a>
+            <Link href="/academics/admission-policy" className="mt-4 inline-block text-sm font-semibold text-white hover:underline">
               Read the admission policy
             </Link>
           </div>

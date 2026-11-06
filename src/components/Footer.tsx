@@ -22,7 +22,7 @@ import { Year } from "./Year";
 
 export function Footer() {
   return (
-    <footer className="bg-brand-900 text-white/80">
+    <footer className="bg-brand text-white">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Logo onDark />
@@ -30,14 +30,14 @@ export function Footer() {
             Founded on {site.founded} by the {site.management}. From 23 children to more than 3,000 —
             still growing, still serving.
           </p>
-          <p className="mt-6 font-display text-xl text-brand-100">“{site.motto}”</p>
+          <p className="mt-6 font-display text-xl text-white">“{site.motto}”</p>
           <div className="mt-6 flex gap-3">
             <a href={site.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 hover:border-brand-100 hover:text-brand-100">
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white hover:bg-white hover:text-brand">
               <Facebook size={18} />
             </a>
             <a href={site.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 hover:border-brand-100 hover:text-brand-100">
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white hover:bg-white hover:text-brand">
               <Youtube size={18} />
             </a>
           </div>
@@ -61,7 +61,7 @@ export function Footer() {
           <h3 className="font-sans text-sm font-semibold text-white">Contact</h3>
           <ul className="mt-4 space-y-3 text-[0.95rem]">
             <li className="flex gap-3">
-              <MapPin size={18} className="mt-0.5 shrink-0 text-brand-100" aria-hidden="true" />
+              <MapPin size={18} className="mt-0.5 shrink-0 text-white" aria-hidden="true" />
               <span>
                 {site.name}
                 <br />
@@ -73,15 +73,15 @@ export function Footer() {
               </span>
             </li>
             <li className="flex gap-3">
-              <Phone size={18} className="mt-0.5 shrink-0 text-brand-100" aria-hidden="true" />
-              <a href={site.phoneHref} className="hover:text-white">{site.phone}</a>
+              <Phone size={18} className="mt-0.5 shrink-0 text-white" aria-hidden="true" />
+              <a href={site.phoneHref} className="hover:underline">{site.phone}</a>
             </li>
             <li className="flex gap-3">
-              <Mail size={18} className="mt-0.5 shrink-0 text-brand-100" aria-hidden="true" />
-              <a href={`mailto:${site.email}`} className="break-all hover:text-white">{site.email}</a>
+              <Mail size={18} className="mt-0.5 shrink-0 text-white" aria-hidden="true" />
+              <a href={`mailto:${site.email}`} className="break-all hover:underline">{site.email}</a>
             </li>
           </ul>
-          <p className="mt-5 text-sm text-white/60">
+          <p className="mt-5 text-sm text-white">
             Mon–Fri {site.timings.weekdays}
             <br />
             Sat {site.timings.saturday}
@@ -89,11 +89,11 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="container-x flex flex-col gap-2 py-5 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border-t border-white">
+        <div className="container-x flex flex-col gap-2 py-5 text-sm text-white sm:flex-row sm:items-center sm:justify-between">
           <p>© <Year /> {site.name}, Marthandam. All rights reserved.</p>
           <p>
-            <a href={site.staffLogin} target="_blank" rel="noreferrer" className="hover:text-white">Staff login</a>
+            <a href={site.staffLogin} target="_blank" rel="noreferrer" className="hover:underline">Staff login</a>
           </p>
         </div>
       </div>
@@ -108,7 +108,7 @@ function FooterCol({ title, links }: { title: string; links: { label: string; hr
       <ul className="mt-4 space-y-2.5 text-[0.95rem]">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="hover:text-white">{l.label}</Link>
+            <Link href={l.href} className="hover:underline">{l.label}</Link>
           </li>
         ))}
       </ul>
