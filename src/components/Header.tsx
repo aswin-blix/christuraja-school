@@ -13,6 +13,13 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+
+  /** Close the desktop dropdown and drop focus so it doesn't stay open after navigation. */
+  const closeMenus = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpenMenu(null);
+    e.currentTarget.blur();
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -62,23 +69,41 @@ export function Header() {
 
           <nav aria-label="Primary" className="hidden lg:block">
             <ul className="flex items-center gap-1">
-              {nav.map((item) => (
-                <li key={item.label} className="group relative">
+              {nav.map((item) => {
+                const isOpen = openMenu === item.label;
+                return (
+                <li
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => item.children && setOpenMenu(item.label)}
+                  onMouseLeave={() => setOpenMenu(null)}
+                  onFocus={() => item.children && setOpenMenu(item.label)}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget as Node | null)) setOpenMenu(null);
+                  }}
+                  onKeyDown={(e) => e.key === "Escape" && setOpenMenu(null)}
+                >
                   <Link
                     href={item.href}
+                    onClick={closeMenus}
                     className={`inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[0.9rem] font-medium transition-colors hover:bg-brand-50 hover:text-brand-700 xl:px-3 ${
                       isActive(item.href) ? "text-brand-700" : "text-ink-900"
                     }`}
                     aria-haspopup={item.children ? "true" : undefined}
+                    aria-expanded={item.children ? isOpen : undefined}
                   >
                     {item.label}
                     {item.children && (
-                      <ChevronDown size={14} className="transition-transform group-hover:rotate-180" aria-hidden="true" />
+                      <ChevronDown size={14} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
                     )}
                   </Link>
 
                   {item.children && (
-                    <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div
+                      className={`absolute left-0 top-full pt-2 transition-all duration-150 ${
+                        isOpen ? "visible opacity-100" : "invisible opacity-0"
+                      }`}
+                    >
                       <ul
                         className={`rounded-lg border border-line bg-paper p-2 shadow-[0_24px_60px_-24px_rgba(15,31,77,0.45)] ${
                           item.children.length > 6 ? "grid w-[34rem] grid-cols-2" : "w-72"
@@ -88,6 +113,7 @@ export function Header() {
                           <li key={child.href}>
                             <Link
                               href={child.href}
+                              onClick={closeMenus}
                               className={`block rounded-md px-3 py-2 text-[0.9rem] hover:bg-brand-50 hover:text-brand-700 ${
                                 pathname === child.href ? "text-brand-700 font-semibold" : "text-ink-900"
                               }`}
@@ -103,7 +129,8 @@ export function Header() {
                     </div>
                   )}
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </nav>
 
